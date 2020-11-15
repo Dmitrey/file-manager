@@ -6,7 +6,6 @@ public class Main {
         URL location = Main.class.getProtectionDomain().getCodeSource().getLocation();
         String path = location.toString();
         path = path.replace("file:/","").replace("filec2.jar","");
-        System.out.println(path);
         File file = new File(path);
         System.out.println("FILE OR DIRECTORY EXISTS: " + file.exists()+"\n");
         if(file.exists() && file.isDirectory()) {
