@@ -10,6 +10,7 @@ public class Main {
             path = path.replace("file:","").replace("filec.jar",""); // для линукса
         else
             path = path.replace("file:/","").replace("filec.jar","");  //для винды
+        System.out.println("PATH: " + path);
         File file = new File(path);
         System.out.println("FILE OR DIRECTORY EXISTS: " + file.exists()+"\n");
         if(file.exists() && file.isDirectory()) {
@@ -17,7 +18,7 @@ public class Main {
                 file_extension = args[0];
                 System.out.println("FILES AMOUNT: " + countFilesWithExtension(file, file_extension));//включает в себя сам jar файл программы)))
             }else
-            System.out.println("FILES AMOUNT: " + countFiles(file));//включает в себя сам jar файл программы)))
+                System.out.println("FILES AMOUNT: " + countFiles(file));//включает в себя сам jar файл программы)))
         }
     }
 
