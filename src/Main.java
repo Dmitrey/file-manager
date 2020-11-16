@@ -3,9 +3,13 @@ import java.net.URL;
 
 public class Main {
     public static void main(String[] args) {
+        //String separator = System.getProperty("file.separator");
         URL location = Main.class.getProtectionDomain().getCodeSource().getLocation();
         String path = location.toString();
-        path = path.replace("file:/","").replace("filec2.jar","");
+        if(System.getProperty("os.name").equals("Linux"))
+            path = path.replace("file:","").replace("filec.jar",""); // для линукса
+        else
+            path = path.replace("file:/","").replace("filec.jar","");  //для винды
         File file = new File(path);
         System.out.println("FILE OR DIRECTORY EXISTS: " + file.exists()+"\n");
         if(file.exists() && file.isDirectory()) {
